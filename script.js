@@ -14,7 +14,7 @@ function playIntro() {
 window.onload = playIntro;
 
 new Typed('.multiple-text', {
-    strings: ['Researcher', 'Co-Founder @ FORESIGHT-X', 'Public Speaker', 'Sports Enthusiast', 'Techie']
+    strings: ['Researcher', 'Co-Founder @ FORESIGHT-X', 'Public Speaker', 'Sports Enthusiast', 'Techie'],
     typeSpeed: 50, backSpeed: 50, loop: true
 });
 
@@ -198,5 +198,6 @@ async function handleSubmit(event) {
         status.innerHTML = "<span style='color: #ff5f56;'>> ERROR: UPLINK_FAILED</span>";
     }
 }
+
 
 form.addEventListener("submit", handleSubmit);
