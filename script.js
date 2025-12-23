@@ -199,5 +199,15 @@ async function handleSubmit(event) {
     }
 }
 
+// Force layout refresh on orientation change
+window.addEventListener('orientationchange', function() {
+    window.location.reload();
+});
+
+// Fix for mobile Safari '100vh' bug
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty('--vh', `${vh}px`);
+
 
 form.addEventListener("submit", handleSubmit);
+
