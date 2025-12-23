@@ -907,70 +907,95 @@ section { min-height: 100vh; padding: 10rem 9% 2rem; }
 .send-btn:hover {
     box-shadow: 0 0 20px var(--main-color);
     transform: translateY(-2px);
-/* Mobile Devices (max-width: 768px) */
+
+
+/* --- CRITICAL RESPONSIVE FIXES --- */
+
+/* 1. Fix the Intro Overlay (Intro Page) */
+#intro-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+#intro-text {
+    font-size: 5rem; /* Scales down automatically */
+    width: 100%;
+}
+
+/* 2. Fix the About Me Section Distortion */
+.about {
+    display: flex;
+    flex-direction: column; /* Stacks image on top of text on mobile */
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    padding: 10% 5%;
+}
+
+.about-img img {
+    width: 70vw; /* Responsive width */
+    max-width: 300px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: var(--glow);
+}
+
+.about-content {
+    text-align: center;
+}
+
+/* 3. Media Queries for Mobile Screens */
 @media (max-width: 768px) {
-    .navbar {
-        display: none; /* Hide standard navbar for a mobile menu or use a simple toggle */
+    html {
+        font-size: 50%; /* Scales all 'rem' units down globally */
     }
-    
-    .heading { font-size: 3.5rem; }
-    
-    .research-grid, .portfolio-container, .awards-container {
-        grid-template-columns: 1fr; /* Single column for readability */
+
+    .header {
+        padding: 2rem 3%;
     }
-    
-    .about-container { padding: 2rem; }
-    
-    .about-content p { font-size: 1.6rem; text-align: left; }
 
-    /* Fix the Command Center for small screens */
-    .mainframe-container { padding: 1.5rem; }
-    
-    .terminal-body { font-size: 1.2rem; padding: 1rem; }
-    
-    .audio-control { bottom: 2rem; right: 2rem; padding: 0.8rem 1.2rem; }
-    
-    .chat-wrapper { bottom: 8rem; right: 2rem; }
-    
-    .chat-window { width: 280px; height: 400px; right: -1rem; }
+    /* Prevent text from overflowing */
+    h1, .heading {
+        font-size: 4rem !important;
+        line-height: 1.2;
+    }
+
+    /* Fix Home Section Orientation */
+    .home {
+        flex-direction: column-reverse;
+        padding-top: 15rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    /* About Section Specific Fix */
+    .about {
+        flex-direction: column;
+        padding-top: 5rem;
+    }
+
+    .about-content h2 {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    /* Command Center Fix */
+    .mainframe-grid {
+        grid-template-columns: 1fr; /* Stacks terminal and contact info */
+    }
 }
 
-/* Very Small Screens (max-width: 450px) */
-@media (max-width: 450px) {
-    html { font-size: 50%; }
-    
-    .home-content h1 { font-size: 3.5rem; }
-    
-    .home-img img { width: 70vw; }
-    
-    .btn { width: 100%; text-align: center; } /* Full width buttons for thumbs */
-}}
-
-#form-status {
-    margin-top: 1rem;
-    font-size: 1.2rem;
-    font-family: 'Courier New', monospace;
+/* 4. Fix for Landscape Orientation (When phone is sideways) */
+@media (max-height: 500px) {
+    .home {
+        padding-top: 10rem;
+    }
+    .about {
+        flex-direction: row;
+    }
 }
-
-/* --- RESPONSIVE OPTIMIZATION --- */
-
-/* Tablets and Small Laptops (max-width: 991px) */
-@media (max-width: 991px) {
-    html { font-size: 55%; }
-    
-    header { padding: 2rem 4%; }
-    
-    section { padding: 10rem 4% 2rem; }
-    
-    .home { flex-direction: column-reverse; text-align: center; gap: 2rem; }
-    
-    .home-content h1 { font-size: 4.5rem; }
-    
-    .home-img img { width: 50vw; margin-top: 4rem; }
-    
-    .mainframe-grid { grid-template-columns: 1fr; } /* Terminal stacks on top of modules */
-    
-    .suggestion-box { grid-column: auto; }
-}
-
-
