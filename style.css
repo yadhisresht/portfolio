@@ -1,0 +1,916 @@
+:root {
+    --bg-color: #02040a;
+    --second-bg-color: #0a0f1a;
+    --main-color: #00f2ff;
+    --text-color: #fff;
+    --glow: 0 0 15px rgba(0, 242, 255, 0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; text-decoration: none; border: none; outline: none; scroll-behavior: smooth; font-family: 'Poppins', sans-serif; }
+
+/* GLOBAL SIZE REDUCTION */
+html { font-size: 60%; overflow-x: hidden; } 
+
+body { background: var(--bg-color); color: var(--text-color); }
+
+/* IMPROVED NEBULA BACKGROUND */
+.space-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2;
+    background: radial-gradient(circle at 50% 50%, #0a1a2f 0%, #02040a 100%);
+}
+.space-bg::after {
+    content: ''; position: absolute; width: 200%; height: 200%;
+    background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: move 100s linear infinite; opacity: 0.3;
+}
+@keyframes move { from { transform: translate(0,0); } to { transform: translate(-50%, -50%); } }
+
+/* INTRO (Perfect Size Kept) */
+#intro-overlay { position: fixed; width: 100%; height: 100%; background: #000; z-index: 9999; display: flex; align-items: center; justify-content: center; }
+#intro-text { font-size: 8rem; color: var(--main-color); font-weight: 700; text-shadow: var(--glow); transition: 0.5s; }
+
+/* HEADER & LOGO SCALE */
+header { position: fixed; top: 0; width: 100%; padding: 2rem 9%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); display: flex; justify-content: space-between; align-items: center; z-index: 100; border-bottom: 1px solid rgba(0,242,255,0.1); }
+.logo { font-size: 2.8rem; font-weight: 700; color: var(--text-color); }
+.logo span { color: var(--main-color); text-shadow: var(--glow); }
+.navbar a { font-size: 1.7rem; color: var(--text-color); margin-left: 3.5rem; transition: 0.3s; font-weight: 500; }
+.navbar a:hover, .navbar a.active { color: var(--main-color); text-shadow: var(--glow); }
+
+/* HOME SECTION SCALE FIX */
+section { min-height: 100vh; padding: 10rem 9% 2rem; }
+.home { display: flex; align-items: center; justify-content: center; gap: 5rem; }
+.home-content { flex: 1; }
+.greeting { font-size: 2.2rem; font-weight: 600; margin-bottom: 1rem; }
+.home-content h1 { font-size: 5.5rem; font-weight: 700; line-height: 1.2; text-shadow: var(--glow); }
+.typing-box { font-size: 2.8rem; margin: 1rem 0; font-weight: 600; }
+.description { font-size: 1.6rem; line-height: 1.6; margin-bottom: 2rem; max-width: 500px; }
+.home-img img { width: 28vw; border-radius: 50%; border: 4px solid var(--main-color); box-shadow: var(--glow); }
+
+/* SKILLS GLASSMORPHISM */
+.heading { font-size: 4.5rem; text-align: center; margin-bottom: 4rem; }
+.skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+.skill-card { background: rgba(255,255,255,0.03); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(0,242,255,0.1); transition: 0.4s; }
+.skill-card:hover { transform: translateY(-10px); border-color: var(--main-color); background: rgba(0, 242, 255, 0.05); box-shadow: var(--glow); }
+.skill-card i { font-size: 3.5rem; color: var(--main-color); margin-bottom: 1.5rem; }
+.skill-card h3 { font-size: 2rem; margin-bottom: 1rem; }
+.skill-card p { font-size: 1.4rem; color: #ccc; }
+
+/* --- RESEARCH PORTFOLIO STYLES --- */
+.section-subtitle {
+    text-align: center;
+    font-size: 1.6rem;
+    color: #ccc;
+    max-width: 800px;
+    margin: -3rem auto 4rem;
+    line-height: 1.6;
+}
+
+.research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.research-card {
+    background: rgba(10, 15, 26, 0.7);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    border-radius: 2rem;
+    padding: 3rem;
+    position: relative;
+    transition: 0.4s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+}
+
+.research-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+    box-shadow: var(--glow);
+}
+
+.status-tag {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.status-tag.published { color: #00ff88; }
+.status-tag.ongoing { color: #ffcc00; }
+
+.research-card h3 {
+    font-size: 2.2rem;
+    color: var(--main-color);
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+.venue {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+.res-desc {
+    font-size: 1.4rem;
+    color: #bbb;
+    line-height: 1.6;
+}
+
+/* --- UPDATED PROJECTS DESIGN --- */
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.portfolio-box {
+    background: rgba(10, 15, 26, 0.7);
+    border: 2px solid rgba(0, 242, 255, 0.1);
+    border-radius: 2rem;
+    padding: 3rem;
+    transition: 0.4s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.portfolio-box:hover {
+    border-color: var(--main-color);
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+.portfolio-content h4 {
+    font-size: 2.4rem;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-content h5 {
+    font-size: 1.4rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.portfolio-content p {
+    font-size: 1.45rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.tech-stack {
+    font-size: 1.3rem !important;
+    color: var(--main-color) !important;
+    background: rgba(0, 242, 255, 0.05);
+    padding: 1rem;
+    border-radius: 1rem;
+    border-left: 3px solid var(--main-color);
+}
+
+.proj-links {
+    margin-top: 2rem;
+}
+
+.proj-btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: var(--main-color);
+    color: #000;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 0.8rem;
+    transition: 0.3s;
+}
+
+.proj-btn:hover {
+    box-shadow: 0 0 15px var(--main-color);
+    transform: scale(1.05);
+}
+/* --- MAINFRAME CONNECT SECTION --- */
+.mainframe-container {
+    position: relative;
+    background: #05080a;
+    border: 2px solid var(--main-color);
+    border-radius: 1rem;
+    padding: 3rem;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+}
+
+/* CRT Scanline Effect */
+.crt-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.mainframe-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+    z-index: 5;
+    position: relative;
+}
+
+/* Terminal Styling */
+.terminal-box {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-header {
+    background: #1a1a1a;
+    padding: 1rem;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+.terminal-title { color: #888; margin-left: 1rem; font-size: 1.2rem; }
+
+.terminal-body { padding: 2rem; color: var(--main-color); font-size: 1.5rem; }
+.log-line { margin-bottom: 0.8rem; opacity: 0.8; }
+.success { color: #27c93f; font-weight: bold; text-shadow: 0 0 10px #27c93f; }
+
+/* Cyber Buttons */
+.cyber-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: transparent;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+.cyber-btn:hover {
+    background: var(--main-color);
+    color: #000;
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+.uplink-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.uplink-item {
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.uplink-item:hover {
+    border-color: var(--main-color);
+    color: var(--main-color);
+}
+
+/* Animations */
+#cursor { animation: blink 1s infinite; }
+@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+@media (max-width: 991px) {
+    .mainframe-grid { grid-template-columns: 1fr; }
+}
+/* CURSOR PARTICLE */
+#cursor-canvas { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 10000; }
+
+/* --- AWARDS SECTION --- */
+.awards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    padding-top: 2rem;
+}
+
+.award-card {
+    background: rgba(10, 15, 26, 0.6);
+    border: 2px solid rgba(0, 242, 255, 0.2);
+    border-radius: 2rem;
+    padding: 2.5rem;
+    text-align: center;
+    transition: 0.4s ease-in-out;
+    backdrop-filter: blur(12px);
+}
+
+.award-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.5);
+    background: rgba(0, 242, 255, 0.03);
+}
+
+.award-img-box {
+    width: 100%;
+    height: 180px;
+    background: #000;
+    border-radius: 1.5rem;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.award-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: 0.4s;
+}
+
+.award-card:hover .award-img-box img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.rank {
+    display: inline-block;
+    color: var(--main-color);
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+}
+
+.award-info h4 {
+    font-size: 2.2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.award-info p {
+    font-size: 1.5rem;
+    color: #bbb;
+    line-height: 1.4;
+}
+
+/* --- UPDATED ABOUT ME DESIGN --- */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10rem 9% 6rem;
+}
+
+.about-container {
+    max-width: 900px; /* Limits width for better readability */
+    background: rgba(10, 15, 26, 0.5);
+    padding: 4rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.about-content p {
+    font-size: 2.1rem; /* Increased size significantly */
+    line-height: 1.8;
+    color: #e0e0e0;
+    text-align: justify; /* Keeps it professional */
+    letter-spacing: 0.5px;
+}
+
+.about-content p strong {
+    color: var(--main-color);
+    text-shadow: 0 0 10px rgba(0, 242, 255, 0.3);
+}
+
+/* Glow effect for the heading in the About section */
+.about .heading {
+    margin-bottom: 4rem;
+}
+
+/* --- FIXED HOME SECTION --- */
+
+/* 1. SOCIAL MEDIA - High Contrast & Larger */
+.social-media {
+    margin: 2.5rem 0;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.8rem; /* Bigger icons */
+    height: 4.8rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2.4rem;
+    color: var(--main-color); /* Bright Neon Cyan */
+    margin-right: 1.5rem;
+    transition: .5s ease;
+}
+
+.social-media a:hover {
+    background: var(--main-color);
+    color: #02040a; /* Black background for contrast */
+    box-shadow: 0 0 20px var(--main-color);
+}
+
+/* 2. DOWNLOAD CV BUTTON - Solid Visibility */
+.btn {
+    display: inline-block;
+    padding: 1.3rem 3rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color: #000 !important; /* Forces black text on cyan background */
+    letter-spacing: .1rem;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(0, 242, 255, 0.4);
+    transition: .5s ease;
+}
+
+.btn:hover {
+    box-shadow: 0 0 30px var(--main-color);
+    transform: translateY(-3px);
+}
+
+/* 3. CONTINUOUS FLOATING PHOTO ANIMATION */
+.home-img img {
+    width: 32vw;
+    border-radius: 50%;
+    border: 0.6rem solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color);
+    
+    /* Animation call */
+    animation: floatImage 4s ease-in-out infinite;
+    transition: 0.5s ease;
+}
+
+/* Photo Hover - Glows more when touched */
+.home-img img:hover {
+    box-shadow: 0 0 50px var(--main-color);
+    border-color: #fff;
+}
+
+/* Keyframes for the continuous "hovering/floating" effect */
+@keyframes floatImage {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.5rem); /* Moves up */
+    }
+    100% {
+        transform: translateY(0); /* Moves back down */
+    }
+}
+
+/* Fix for mobile/smaller screens so photo isn't too huge */
+@media (max-width: 768px) {
+    .home-img img {
+        width: 60vw;
+        margin-top: 4rem;
+    }
+}
+
+/* --- EXTRACURRICULAR SECTION --- */
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2.5rem;
+}
+
+.activity-card {
+    background: rgba(10, 15, 26, 0.7);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    border-radius: 2rem;
+    padding: 3rem;
+    position: relative;
+    transition: 0.4s ease;
+    backdrop-filter: blur(10px);
+    border-left: 4px solid var(--main-color);
+}
+
+.activity-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--main-color);
+    box-shadow: 0 0 25px rgba(0, 242, 255, 0.4);
+}
+
+.activity-card h3 {
+    font-size: 2rem;
+    margin: 1.5rem 0 1rem;
+    color: #fff;
+}
+
+.activity-card p {
+    font-size: 1.4rem;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Activity Tags */
+.activity-tag {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #000;
+}
+
+.leadership { background: #ffcc00; } /* Gold for Leadership */
+.innovation { background: var(--main-color); } /* Cyan for Innovation */
+.public-speaking { background: #ff5f56; } /* Red for Public Speaking */
+.research-dev { background: #27c93f; } /* Green for R&D */
+
+/* CONTACT DETAILS STYLING */
+.contact-details {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: rgba(0, 242, 255, 0.05);
+    border-radius: 0.5rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 1.6rem;
+    color: #fff;
+    margin-bottom: 1.2rem;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.detail-item i {
+    color: var(--main-color);
+}
+
+/* --- FOOTER DESIGN --- */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 3rem 9%;
+    background: #02040a;
+    border-top: 1px solid rgba(0, 242, 255, 0.1);
+}
+
+.footer-text p {
+    font-size: 1.5rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* SYSTEM STATUS INDICATOR */
+.status-indicator {
+    background: rgba(39, 201, 63, 0.1);
+    padding: 0.5rem 1.2rem;
+    border-radius: 2rem;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    color: #27c93f;
+    border: 1px solid rgba(39, 201, 63, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.dot-live {
+    width: 8px;
+    height: 8px;
+    background: #27c93f;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #27c93f;
+    animation: pulseStatus 1.5s infinite;
+}
+
+@keyframes pulseStatus {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.5; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.footer-text p span:not(.status-indicator) {
+    color: var(--main-color);
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .8rem;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 2.5rem var(--main-color);
+    transform: translateY(-3px);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: #000;
+}
+
+/* --- AUDIO TOGGLE STYLING --- */
+.audio-control {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid var(--main-color);
+    padding: 1rem 1.5rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    z-index: 10001;
+    transition: 0.3s;
+    backdrop-filter: blur(5px);
+}
+
+.audio-control:hover {
+    box-shadow: 0 0 15px var(--main-color);
+    background: rgba(0, 242, 255, 0.1);
+}
+
+.audio-text {
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    color: var(--main-color);
+    letter-spacing: 1px;
+}
+
+/* Visualizer Bars */
+.visualizer {
+    display: flex;
+    align-items: flex-end;
+    gap: 3px;
+    height: 15px;
+}
+
+.bar {
+    width: 3px;
+    height: 5px;
+    background: var(--main-color);
+    transition: 0.2s;
+}
+
+/* Animation when music is playing */
+.audio-active .bar {
+    animation: soundWave 0.5s infinite alternate;
+}
+
+.audio-active .bar:nth-child(2) { animation-delay: 0.1s; }
+.audio-active .bar:nth-child(3) { animation-delay: 0.2s; }
+.audio-active .bar:nth-child(4) { animation-delay: 0.3s; }
+
+@keyframes soundWave {
+    0% { height: 5px; }
+    100% { height: 15px; }
+}
+
+/* --- CHATBOT FLOATING ORB --- */
+.chat-wrapper {
+    position: fixed;
+    bottom: 10rem; /* Sits above your audio toggle */
+    right: 3rem;
+    z-index: 10002;
+}
+
+.chat-orb {
+    width: 6rem;
+    height: 6rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 0 20px var(--main-color);
+    position: relative;
+}
+
+.chat-orb i {
+    font-size: 2.5rem;
+    color: #000;
+    z-index: 2;
+}
+
+.orb-ring {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--main-color);
+    border-radius: 50%;
+    animation: orbPulse 2s infinite;
+}
+
+@keyframes orbPulse {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* CHAT WINDOW */
+.chat-window {
+    position: absolute;
+    bottom: 8rem;
+    right: 0;
+    width: 320px;
+    height: 450px;
+    background: rgba(2, 4, 10, 0.95);
+    border: 1px solid var(--main-color);
+    border-radius: 1.5rem;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,1);
+}
+
+.chat-header {
+    background: rgba(0, 242, 255, 0.1);
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+}
+
+.status-dot {
+    width: 8px;
+    height: 8px;
+    background: #27c93f;
+    border-radius: 50%;
+    box-shadow: 0 0 5px #27c93f;
+}
+
+.chat-header span { font-size: 1.2rem; color: var(--main-color); flex: 1; font-family: 'Courier New', monospace; }
+
+#close-chat { background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
+
+.chat-body {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.msg {
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+    max-width: 85%;
+    line-height: 1.4;
+}
+
+.bot-msg { background: rgba(255,255,255,0.05); color: #fff; align-self: flex-start; border-left: 3px solid var(--main-color); }
+
+.user-msg { background: var(--main-color); color: #000; align-self: flex-end; font-weight: 600; }
+
+.chat-input-area {
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.chat-input-area input {
+    flex: 1;
+    background: transparent;
+    border: 1px solid rgba(0,242,255,0.3);
+    border-radius: 0.5rem;
+    padding: 0.8rem;
+    color: #fff;
+    outline: none;
+}
+
+#send-btn { background: var(--main-color); border: none; padding: 0.8rem 1.2rem; border-radius: 0.5rem; cursor: pointer; }
+
+/* Ensure the wrapper doesn't block other elements but keeps orb clickable */
+.chat-wrapper {
+    position: fixed;
+    bottom: 11rem; /* Slightly higher than audio */
+    right: 3rem;
+    z-index: 10005; /* Very high to stay on top */
+    pointer-events: none; /* Allows clicking through the wrapper... */
+}
+
+.chat-orb, .chat-window {
+    pointer-events: auto; /* ...but ensures the actual orb/window ARE clickable */
+}
+
+/* Ensure visualizer doesn't overlap */
+.audio-control {
+    z-index: 10004; /* Slightly lower than chat */
+}
+
+/* --- SUGGESTION BOX DESIGN --- */
+.suggestion-box {
+    grid-column: span 2; /* Makes it wider for a better layout */
+    margin-top: 2rem;
+}
+
+.suggestion-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-group label {
+    font-family: 'Courier New', monospace;
+    color: var(--main-color);
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+
+.input-group input, 
+.input-group textarea {
+    background: rgba(0, 242, 255, 0.05);
+    border: 1px solid rgba(0, 242, 255, 0.2);
+    padding: 1.2rem;
+    color: #fff;
+    border-radius: 5px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+    border-color: var(--main-color);
+    box-shadow: 0 0 10px rgba(0, 242, 255, 0.2);
+}
+
+.input-group textarea {
+    height: 120px;
+    resize: none;
+}
+
+.send-btn {
+    background: var(--main-color);
+    color: #000;
+    border: none;
+    padding: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.send-btn:hover {
+    box-shadow: 0 0 20px var(--main-color);
+    transform: translateY(-2px);
+}
+
+#form-status {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-family: 'Courier New', monospace;
+}

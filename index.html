@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yadhisresht Harikrishnan | AI & Disaster Management Researcher</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <meta name="title" content="Yadhisresht Harikrishnan | AI & Disaster Management Researcher">
+    <meta name="description" content="Official Portfolio of Yadhisresht Harikrishnan. Researcher at FORESIGHT-X specializing in AI, Machine Learning, and Earthquake Engineering.">
+    <meta name="keywords" content="Yadhisresht Harikrishnan, FORESIGHT-X, AI Researcher, Earthquake Engineering, SRM IST, Disaster Management AI, Geospatial Intelligence">
+    <meta name="author" content="Yadhisresht Harikrishnan">
+    <meta name="google-site-verification" content="Vjgb4U4DBc2F6eXH1QW7Tp-h5l2GBlSdQtyjrLzBVPE" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yadhisresht.github.io/portfolio/">
+    <meta property="og:title" content="Yadhisresht Harikrishnan | Digital Command Center">
+    <meta property="og:description" content="Exploring the intersection of AI, ML, and Seismic Research.">
+    <meta property="og:image" content="https://yadhisresht.github.io/portfolio/assets/preview.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Yadhisresht Harikrishnan",
+      "jobTitle": "Researcher",
+      "affiliation": "FORESIGHT-X",
+      "url": "https://yadhisresht.github.io/portfolio/"
+    }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="audio-control" id="audio-toggle">
+        <div class="visualizer">
+        </div>
+        <span class="audio-text">AUDIO OFF</span>
+    </div>
+
+    <audio id="bg-audio" loop>
+        <source src="assets/bg-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="space-bg"></div>
+    <div id="intro-overlay"><div id="intro-text"></div></div>
+    <canvas id="cursor-canvas"></canvas>
+
+    <header class="header">
+        <a href="#" class="logo">Yadhi<span>sresht</span></a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#research">Research</a>
+            <a href="#portfolio">Projects</a>
+            <a href="#awards">Awards</a>
+            <a href="#extracurricular">Extracurricular</a>
+            <a href="#contact">Connect</a>
+        </nav>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3 class="greeting">Hello, It's Me</h3>
+            <h1>Yadhisresht Harikrishnan</h1>
+            <h3 class="typing-box">I'm a <span class="multiple-text"></span></h3>
+            <p class="description">Co-Founder of <strong>FORESIGHT-X</strong>. Specializing in Disaster Intelligence and AI-driven Engineering to build a resilient future.</p>
+            
+            <div class="social-media">
+                <a href="https://linkedin.com/in/yadhisresht" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/yadhisresht" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://instagram.com/yadhisresht" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <a href="assets/Yadhisresht_CV.pdf" class="btn" download>Download CV</a>
+        </div>
+
+        <div class="home-img">
+            <img src="assets/profile.jpg" alt="Yadhisresht">
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span></h2>
+        <div class="about-container">
+            <div class="about-content">
+                <p>
+                    I am a B.Tech Computer Science student specializing in Artificial Intelligence and Machine Learning at SRM Institute of Science and Technology. I am the Co‑Founder of <strong>FORESIGHT‑X</strong>, an independent research and innovation lab working at the intersection of AI, ML, earthquake engineering, and disaster management. My journey spans research, national‑level hackathons, large‑scale event leadership, and building intelligent systems that bridge computational intelligence with real‑world applications.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading">Technical <span>Stack</span></h2>
+        <div class="skills-container">
+            <div class="skill-card"><i class="fa-solid fa-code"></i><h3>Programming</h3><p>Python, C++, Object-Oriented Programming, Data Structures & Algorithms, Operating Systems</p></div>
+            <div class="skill-card"><i class="fa-solid fa-brain"></i><h3>AI & ML</h3><p>Machine Learning, Deep Learning, Artificial Neural Networks, TensorFlow, Model Training & Evaluation</p></div>
+            <div class="skill-card"><i class="fa-solid fa-database"></i><h3>Data & Analytics</h3><p>NumPy, Pandas, Matplotlib, Data Analysis, Power BI, Visualization & Insights</p></div>
+            <div class="skill-card"><i class="fa-solid fa-earth-americas"></i><h3>Geospatial & Domain</h3><p>GIS Mapping, Spatial Analysis, Earthquake Engineering, Disaster Management Systems</p></div>
+            <div class="skill-card"><i class="fa-solid fa-users"></i><h3>Leadership</h3><p>Public Speaking, Team Building, Mentoring, Research Communication, Event Management</p></div>
+        </div>
+    </section>
+
+    <section class="research" id="research">
+        <h2 class="heading">Research <span>Portfolios</span></h2>
+        <p class="section-subtitle">
+            My research focuses on applying Artificial Intelligence, Machine Learning, and Geospatial Intelligence 
+            to earthquake engineering, disaster management, healthcare, and real-world societal challenges.
+        </p>
+
+        <div class="research-grid">
+        
+            <div class="research-card">
+                <span class="status-tag published">🟢 Selected for Publication</span>
+                    <h3>Advancing Earthquake Engineering: The Role of ML and DL in Mitigating Seismic Risks</h3>
+                    <p class="venue">Springer | Presented at IIT Indore</p>
+                    <p class="res-desc">
+                        Investigating ML and DL models for seismic data analysis, enhancing earthquake hazard 
+                        prediction and disaster-resilient infrastructure planning.
+                    </p>
+            </div>
+
+            <div class="research-card">
+                <span class="status-tag ongoing">🟡 Ongoing Research</span>
+                <h3>Seismic Hazard Assessment in North-Eastern India using ANN & Geospatial Analysis</h3>
+                <p class="venue">ANN, GIS, Regional Seismic Modeling</p>
+                <p class="res-desc">
+                    Integrating ANN-based predictive models with geospatial datasets to identify seismic patterns 
+                    and improve regional risk assessment accuracy.
+                </p>
+            </div>
+
+            <div class="research-card">
+                <span class="status-tag ongoing">🟡 Ongoing Research</span>
+                <h3>AI-Driven Classification for Structural Support Selection in Offshore Piping</h3>
+                <p class="venue">AI-based Structural Optimization | Offshore Engineering</p>
+                <p class="res-desc">
+                    Developing AI models to optimize structural support selection, improving offshore 
+                    system safety and operational efficiency.
+                </p>
+            </div>
+
+            <div class="research-card">
+                <span class="status-tag ongoing">🟡 Ongoing Research</span>
+                <h3>Deep Learning for Early Detection in Cervical Cancer Screening</h3>
+                <p class="venue">Deep Learning | Medical Imaging | Healthcare AI</p>
+                <p class="res-desc">
+                    Applying deep learning techniques for early-stage cervical cancer detection to support 
+                    clinical decision-making and early intervention.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <h2 class="heading">My <span>Projects</span></h2>
+        <div class="portfolio-container">
+
+            <div class="portfolio-box">
+                <div class="portfolio-content">
+                    <h4>TerraGuard</h4>
+                    <h5>AI-Powered Climate Guard System</h5>
+                    <p>An AI-based analytical and predictive platform for climate monitoring and risk assessment using environmental datasets to enhance decision-making in sustainability and disaster resilience.</p>
+                    <p class="tech-stack"><strong>Tech:</strong> Python, Machine Learning, Environmental Data, Predictive Analytics</p>
+                    <div class="proj-links">
+                        <a href="https://github.com/yadhisresht" target="_blank" class="proj-btn"><i class="fa-brands fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <div class="portfolio-content">
+                    <h4>Marinus Datum</h4>
+                    <h5>Marine Biodiversity & Climate Analytics</h5>
+                    <p>An AI-driven predictive system for marine and climate data analysis to forecast biodiversity changes, enabling conservation insights and ecosystem management.</p>
+                    <p class="tech-stack"><strong>Tech:</strong> Python, Data Analytics, Climate Modeling, AI Forecasting</p>
+                    </div>
+            </div>
+
+            <div class="portfolio-box">
+                <div class="portfolio-content">
+                    <h4>AI Cricket Chatbot</h4>
+                    <p>An intelligent conversational chatbot leveraging natural language processing and machine learning to provide interactive cricket analytics, match insights, and player performance predictions.</p>
+                    <p class="tech-stack"><strong>Tech:</strong> Python, NLP, Machine Learning, Conversational AI</p>
+                    <div class="proj-links">
+                        <a href="https://github.com/yadhisresht" target="_blank" class="proj-btn"><i class="fa-brands fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-box">
+                <div class="portfolio-content">
+                    <h4>READAPT</h4>
+                    <h5>Reading Accessibility Tool</h5>
+                    <p>A browser-based accessibility tool designed for individuals with ADHD, dyslexia, and low vision, offering AI-driven reading assistance and focus-enhancing features.</p>
+                    <p class="tech-stack"><strong>Tech:</strong> Web Technologies, Accessibility Design, AI Text Assistance</p>
+                    <div class="proj-links">
+                        <a href="https://github.com/yadhisresht" target="_blank" class="proj-btn"><i class="fa-brands fa-github"></i> Source Code</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    
+
+    <section class="awards" id="awards">
+        <h2 class="heading">Honors & <span>Awards</span></h2>
+        <div class="awards-container">
+        
+            <div class="award-card">
+                <div class="award-img-box"><img src="assets/images/award1.jpeg" alt="GEO HACK"></div>
+                <div class="award-info">
+                    <span class="rank">1st Place</span>
+                    <h4>GEO HACK 1.0</h4>
+                    <p>IEEE GRSS SRMIST (2025)</p>
+                </div>
+            </div>
+
+        <div class="award-card">
+            <div class="award-img-box"><img src="assets/images/award2.jpeg" alt="SEISMO HACK"></div>
+            <div class="award-info">
+                <span class="rank">2nd Place</span>
+                <h4>SEISMO HACK 1.0</h4>
+                <p>National Hackathon by ISET</p>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <div class="award-img-box"><img src="assets/images/award3.jpeg" alt="TechZooka"></div>
+            <div class="award-info">
+                <span class="rank">Runner Up</span>
+                <h4>TechZooka 2025</h4>
+                <p>Infosys & IIT Madras</p>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <div class="award-img-box"><img src="assets/images/award4.jpeg" alt="Manipal Hackathon"></div>
+            <div class="award-info">
+                <span class="rank">3rd Place</span>
+                <h4>Manipal Hackathon</h4>
+                <p>MAHE, MANIPAL (2025)</p>
+            </div>
+        </div>
+
+        <div class="award-card">
+            <div class="award-img-box"><img src="assets/images/award5.jpeg" alt="Pitch Perfect"></div>
+            <div class="award-info">
+                <span class="rank">3rd Place</span>
+                <h4>Pitch Perfect 2025</h4>
+                <p>Directorate of Alumni Affairs, SRMIST</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="extracurricular" id="extracurricular">
+    <h2 class="heading">Extracurricular <span>Activities</span></h2>
+    <div class="activity-grid">
+        
+        <div class="activity-card">
+            
+            <h3>Vice-Chairman, ISET SRM Chennai Student Chapter</h3>
+            <p>Leading strategic initiatives, mentoring members, and fostering innovation in earthquake engineering and geotechnical research. Collaborated with experts to host technical sessions and workshops.</p>
+        </div>
+
+        <div class="activity-card">
+            
+            <h3>Co-Founder of FORESIGHT-X</h3>
+            <p>Leading an interdisciplinary lab integrating AI/ML with earthquake engineering for disaster prediction. Driving research on ANN-based seismic modeling and geospatial intelligence.</p>
+        </div>
+
+        <div class="activity-card">
+            
+            <h3>Master of Ceremonies, Directorate of Student Affairs – SRM</h3>
+            <p>Hosted major institutional events in five languages (English, Hindi, Tamil, Kannada, Telugu). Emceed for 10,000+ attendees at MILAN, a major college cultural festival.</p>
+        </div>
+
+        <div class="activity-card">
+            
+            <h3>R&D Member in CINTEL Student Association</h3>
+            <p>Actively exploring innovation-driven projects within the department. Collaborating to initiate research frameworks focused on technology and data-driven approaches.</p>
+        </div>
+
+    </div>
+</section>
+
+    <section class="connect" id="connect">
+    <h2 class="heading">Digital <span>Command Center</span></h2>
+    
+    <div class="mainframe-container">
+        <div class="crt-overlay"></div>
+
+        <div class="mainframe-grid">
+            <div class="terminal-box">
+                <div class="terminal-header">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="terminal-title">system_access.exe</span>
+                </div>
+                <div class="terminal-body">
+                    <div id="terminal-log">
+                        <p class="log-line">> Initializing secure tunnel...</p>
+                        <p class="log-line">> Establishing P2P handshake...</p>
+                        <p class="log-line">> Accessing yadhisresht_mainframe...</p>
+                        <p class="log-line success">> CONNECTION_STABLE: ACCESS GRANTED</p>
+                    </div>
+                    <div class="typing-indicator">> <span id="cursor">_</span></div>
+                </div>
+            </div>
+
+            <div class="action-modules">
+                <div class="module-card comms">
+                    <h3>COMMUNICATIONS_INTEL</h3>
+                    <div class="contact-details">
+                        <div class="detail-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>yadhisreshtwork@gmail.com</span> </div>
+                        <div class="detail-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <span>+91 73033 17899</span> </div>
+                    </div>
+                    
+                </div>
+
+                <div class="module-card suggestion-box">
+                    <h3>NEURAL_FEEDBACK_LINK</h3>
+                    <form action="https://formspree.io/f/xykgbqae" method="POST" id="suggestion-form">
+                        <div class="input-group">
+                            <label>SENDER_ID (Email)</label>
+                            <input type="email" name="email" placeholder="enter_identity@mail.com" required>
+                        </div>
+                        <div class="input-group">
+                            <label>DATA_INPUT (Message)</label>
+                            <textarea name="message" placeholder="Type your suggestion or message..." required></textarea>
+                        </div>
+                        <button type="submit" class="send-btn">
+                            <i class="fa-solid fa-terminal"></i> TRANSMIT_DATA
+                        </button>
+                    </form>
+                    <div id="form-status"></div>
+                </div>
+
+                <div class="module-card uplinks">
+                    <h3>EXTERNAL_UPLINKS</h3>
+                    <div class="uplink-grid">
+                        <a href="https://linkedin.com/in/yadhisresht" target="_blank" class="uplink-item"><i class="fa-brands fa-linkedin"></i> LN</a>
+                        <a href="https://github.com/yadhisresht" target="_blank" class="uplink-item"><i class="fa-brands fa-github"></i> GH</a>
+                        <a href="https://instagram.com/yadhisresht" target="_blank" class="uplink-item"><i class="fa-brands fa-instagram"></i> IG</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+    <footer class="footer">
+        <div class="footer-text">
+            <p>
+                <span class="status-indicator">
+                    <span class="dot-live"></span> SYSTEM_ONLINE
+                </span>
+                | Copyright &copy; 2025 by <span>Yadhisresht Harikrishnan</span>
+            </p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#home"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
+    </footer>
+    <div class="chat-wrapper">
+        <div id="chat-orb" class="chat-orb">
+            <i class="fa-solid fa-robot"></i>
+            <div class="orb-ring"></div>
+        </div>
+
+        <div id="chat-window" class="chat-window">
+            <div class="chat-header">
+                <div class="status-dot"></div>
+                <span>YADHI_AI_ASSISTANT v1.0</span>
+                <button id="close-chat">&times;</button>
+            </div>
+            <div id="chat-body" class="chat-body">
+                <div class="msg bot-msg">System initialized. How can I assist with your inquiry regarding Yadhisresht's research?</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="Type a command (e.g. Research)...">
+                <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
