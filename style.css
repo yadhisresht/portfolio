@@ -914,3 +914,63 @@ section { min-height: 100vh; padding: 10rem 9% 2rem; }
     font-size: 1.2rem;
     font-family: 'Courier New', monospace;
 }
+
+/* --- RESPONSIVE OPTIMIZATION --- */
+
+/* Tablets and Small Laptops (max-width: 991px) */
+@media (max-width: 991px) {
+    html { font-size: 55%; }
+    
+    header { padding: 2rem 4%; }
+    
+    section { padding: 10rem 4% 2rem; }
+    
+    .home { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+    
+    .home-content h1 { font-size: 4.5rem; }
+    
+    .home-img img { width: 50vw; margin-top: 4rem; }
+    
+    .mainframe-grid { grid-template-columns: 1fr; } /* Terminal stacks on top of modules */
+    
+    .suggestion-box { grid-column: auto; }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+    .navbar {
+        display: none; /* Hide standard navbar for a mobile menu or use a simple toggle */
+    }
+    
+    .heading { font-size: 3.5rem; }
+    
+    .research-grid, .portfolio-container, .awards-container {
+        grid-template-columns: 1fr; /* Single column for readability */
+    }
+    
+    .about-container { padding: 2rem; }
+    
+    .about-content p { font-size: 1.6rem; text-align: left; }
+
+    /* Fix the Command Center for small screens */
+    .mainframe-container { padding: 1.5rem; }
+    
+    .terminal-body { font-size: 1.2rem; padding: 1rem; }
+    
+    .audio-control { bottom: 2rem; right: 2rem; padding: 0.8rem 1.2rem; }
+    
+    .chat-wrapper { bottom: 8rem; right: 2rem; }
+    
+    .chat-window { width: 280px; height: 400px; right: -1rem; }
+}
+
+/* Very Small Screens (max-width: 450px) */
+@media (max-width: 450px) {
+    html { font-size: 50%; }
+    
+    .home-content h1 { font-size: 3.5rem; }
+    
+    .home-img img { width: 70vw; }
+    
+    .btn { width: 100%; text-align: center; } /* Full width buttons for thumbs */
+}
