@@ -919,94 +919,71 @@ section { min-height: 100vh; padding: 10rem 9% 2rem; }
     transform: translateY(-2px);
 
 
-/* --- CRITICAL RESPONSIVE FIXES --- */
-
-/* 1. Fix the Intro Overlay (Intro Page) */
-#intro-overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-}
-
-#intro-text {
-    font-size: 5rem; /* Scales down automatically */
-    width: 100%;
-}
-
-/* 2. Fix the About Me Section Distortion */
-.about {
-    display: flex;
-    flex-direction: column; /* Stacks image on top of text on mobile */
-    justify-content: center;
-    align-items: center;
-    gap: 4rem;
-    padding: 10% 5%;
-}
-
-.about-img img {
-    width: 70vw; /* Responsive width */
-    max-width: 300px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: var(--glow);
-}
-
-.about-content {
-    text-align: center;
-}
-
-/* 3. Media Queries for Mobile Screens */
-@media (max-width: 768px) {
+/* --- VERTICAL PORTRAIT OPTIMIZATION --- */
+@media (max-width: 480px) {
     html {
-        font-size: 50%; /* Scales all 'rem' units down globally */
+        font-size: 45%; /* Shrinks everything globally for small screens */
     }
 
-    .header {
-        padding: 2rem 3%;
+    /* Fix Intro Overlay - Center the text properly */
+    #intro-text {
+        font-size: 4rem;
+        width: 100%;
+        text-align: center;
     }
 
-    /* Prevent text from overflowing */
-    h1, .heading {
-        font-size: 4rem !important;
-        line-height: 1.2;
-    }
-
-    /* Fix Home Section Orientation */
+    /* HOME SECTION - Stack image on top of text */
     .home {
-        flex-direction: column-reverse;
-        padding-top: 15rem;
+        flex-direction: column-reverse; /* Puts text below image */
+        justify-content: center;
+        gap: 2rem;
+        padding-top: 12rem;
+    }
+
+    .home-content {
+        text-align: center;
     }
 
     .home-content h1 {
-        font-size: 5rem;
+        font-size: 4rem;
+        line-height: 1.1;
     }
 
-    /* About Section Specific Fix */
-    .about {
-        flex-direction: column;
-        padding-top: 5rem;
-    }
-
-    .about-content h2 {
-        text-align: center;
+    .home-img img {
+        width: 70vw; /* Image takes up 70% of screen width */
         margin-bottom: 2rem;
     }
 
-    /* Command Center Fix */
-    .mainframe-grid {
-        grid-template-columns: 1fr; /* Stacks terminal and contact info */
-    }
-}
-
-/* 4. Fix for Landscape Orientation (When phone is sideways) */
-@media (max-height: 500px) {
-    .home {
-        padding-top: 10rem;
-    }
+    /* ABOUT SECTION - The most distorted part */
     .about {
-        flex-direction: row;
+        flex-direction: column; /* FORCES stacking */
+        padding: 5rem 2rem;
+        gap: 3rem;
+    }
+
+    .about-img img {
+        width: 60vw;
+        max-width: 250px;
+    }
+
+    .about-content {
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    /* RESEARCH & COMMAND CENTER */
+    .research-grid, .mainframe-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+        gap: 2rem;
+    }
+
+    .terminal-box {
+        width: 100%;
+        min-height: 200px;
+    }
+
+    /* Hide the cursor canvas on mobile to save memory and stop distortion */
+    #cursor-canvas {
+        display: none;
     }
 }
-
